@@ -32,6 +32,10 @@ export default class Customer {
     return this._id;
   }
 
+  get Address(): Address {
+    return this._address;
+  }
+
   activate() {
     if (this._address === undefined) {
       throw new Error("Address is required");
@@ -47,10 +51,6 @@ export default class Customer {
   changeName(name: string) {
     this._name = name;
     this.validate();
-  }
-
-  get Address(): Address {
-    return this._address;
   }
 
   addRewardPoints(points: number) {
